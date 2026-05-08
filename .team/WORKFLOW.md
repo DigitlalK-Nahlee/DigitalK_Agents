@@ -51,10 +51,24 @@ Lire `config.md` pour déterminer où créer et lire les tickets :
 - Nommage : `<ID>-<titre-en-kebab-case>.md`
 - Utiliser le template `.team/tickets/TEMPLATE.md`
 
-## Cas particuliers
+## Décision : quels agents lancer
 
-### Pas de frontend
-Si la fonctionnalité est purement backend, l'étape Dev Front est sautée.
+L'orchestrateur analyse la demande AVANT de spawner quoi que ce soit et décide les agents nécessaires. Règle : **ne lancer que ce qui est utile**.
+
+| Type de demande | Agents à lancer |
+|----------------|-----------------|
+| Question, conseil, analyse, explication | Aucun — l'orchestrateur répond directement |
+| Correction de bug simple (1 fichier, 1 endroit) | Dev concerné (back ou front) + Reviewer |
+| Fonctionnalité purement backend | Dev Back → Reviewer → Testeur |
+| Fonctionnalité purement frontend | Dev Front → Reviewer → Testeur |
+| Fonctionnalité fullstack | Dev Back → Dev Front → Reviewer → Testeur |
+| Refactoring / renommage | Dev concerné + Reviewer (pas de testeur si pas de logique modifiée) |
+| Ajout de tests uniquement | Testeur seul |
+| Revue de code à la demande | Reviewer seul |
+
+**En cas de doute**, l'orchestrateur précise au dirigeant les agents qu'il compte lancer et pourquoi, avant de les spawner.
+
+## Cas particuliers
 
 ### Blocage technique
 Si un agent ne peut pas avancer (spec ambiguë, dépendance manquante), il écrit dans `## Blocages` du ticket et l'orchestrateur escalade immédiatement au dirigeant.
