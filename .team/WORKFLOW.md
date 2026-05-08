@@ -68,6 +68,11 @@ L'orchestrateur analyse la demande AVANT de spawner quoi que ce soit et décide 
 
 **En cas de doute**, l'orchestrateur précise au dirigeant les agents qu'il compte lancer et pourquoi, avant de les spawner.
 
+### Cas du Testeur
+Vérifier dans `config.md` si un framework de test est configuré (`TEST_FRAMEWORK`).  
+- Si vide ou absent → **zapper le Testeur**, le mentionner dans le compte-rendu final
+- Si renseigné → spawner le Testeur normalement
+
 ## Cas particuliers
 
 ### Blocage technique

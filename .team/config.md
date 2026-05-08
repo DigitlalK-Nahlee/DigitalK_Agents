@@ -17,6 +17,13 @@ GIT_ENABLED=true
 LANG=fr
 ```
 
+## Tests
+```
+TEST_FRAMEWORK=
+```
+Framework de test utilisé par le projet (ex: `jest`, `vitest`, `pytest`, `flutter_test`).
+Laisser vide si aucun framework de test n'est en place — le Testeur sera zappé automatiquement.
+
 ## Limites
 ```
 MAX_ITERATIONS=3
