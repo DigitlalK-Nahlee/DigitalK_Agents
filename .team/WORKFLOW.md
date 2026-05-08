@@ -31,11 +31,25 @@
 
 ## Règles globales
 
-- **Ticket vivant** : chaque agent lit ET écrit dans `.team/tickets/<id>.md`
+- **Ticket vivant** : chaque agent lit ET écrit dans le fichier ticket actif (voir "Emplacement des tickets" ci-dessous)
 - **Pas de communication directe** entre agents — tout passe par le ticket
 - **Limite de boucle** : max 3 itérations par agent. Au-delà → escalade orchestrateur → dirigeant
-- **Obsidian** : si un vault est configuré dans le projet, chaque agent documente selon `.team/OBSIDIAN_RULES.md`
 - **Git** : chaque agent commite son travail. L'orchestrateur ne commite pas.
+
+## Emplacement des tickets
+
+Lire `config.md` pour déterminer où créer et lire les tickets :
+
+### Avec vault Obsidian (`OBSIDIAN_VAULT_PATH` renseigné)
+- Les tickets sont créés dans `<OBSIDIAN_VAULT_PATH>/Tickets/`
+- Nommage : `Ticket-<ID>-<TitreEnPascalCase>.md`
+- Respecter impérativement les règles de `.team/OBSIDIAN_RULES.md` (wikilinks, max 20 lignes par note, template, log)
+- Le ticket principal peut dépasser 20 lignes car c'est un document de suivi — mais chaque décision technique doit avoir sa propre note atomique liée depuis le ticket
+
+### Sans vault Obsidian (`OBSIDIAN_VAULT_PATH` vide)
+- Les tickets sont créés dans `.team/tickets/`
+- Nommage : `<ID>-<titre-en-kebab-case>.md`
+- Utiliser le template `.team/tickets/TEMPLATE.md`
 
 ## Cas particuliers
 
