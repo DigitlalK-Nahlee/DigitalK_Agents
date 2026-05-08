@@ -32,13 +32,17 @@ LANG=fr
 MAX_ITERATIONS=3
 ```
 
-### 3. Copier `CLAUDE.md` à la racine du projet
+### 3. Intégrer `CLAUDE.md` à la racine du projet
 
+Claude lit automatiquement `CLAUDE.md` au démarrage — c'est ce qui lui explique son rôle d'orchestrateur. **Ne pas écraser un `CLAUDE.md` existant.**
+
+**Si le projet n'a pas encore de `CLAUDE.md` :**
 ```bash
-cp .team/../CLAUDE.md ./CLAUDE.md
+cp .team/CLAUDE.md ./CLAUDE.md
 ```
 
-> Ce fichier est lu automatiquement par Claude à chaque démarrage de session. Il lui explique son rôle d'orchestrateur, le pipeline, et comment spawner les agents. **Sans ce fichier, Claude ne connaît pas le système.**
+**Si le projet a déjà un `CLAUDE.md` :**  
+Ajouter manuellement le contenu de `.team/CLAUDE.md` à la fin du `CLAUDE.md` existant du projet. Les deux contenus doivent coexister.
 
 ### 4. Ouvrir Claude Code à la racine du projet
 
