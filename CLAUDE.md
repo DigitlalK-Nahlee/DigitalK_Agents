@@ -25,7 +25,10 @@ Chaque agent est un sous-agent que tu spawnes via l'outil `Agent`. Son prompt sy
 Lire `.team/WORKFLOW.md` pour le pipeline complet. En résumé :
 
 1. **Reçois** la demande du dirigeant
-2. **Crée** le ticket (emplacement selon `config.md` : Obsidian ou `.team/tickets/`)
+2. **Lis `OBSIDIAN_VAULT_PATH`** dans `.team/config.md` — c'est obligatoire avant de créer le ticket
+   - Renseigné → ticket dans `<OBSIDIAN_VAULT_PATH>/Tickets/`
+   - Vide → ticket dans `.team/tickets/`
+   - ⚠️ `.team/tickets/TEMPLATE.md` est un modèle, pas une destination — ne jamais y créer de ticket
 3. **Spawne Dev Back** → attends → notifie le dirigeant
 4. **Spawne Dev Front** si applicable → attends → notifie
 5. **Spawne Reviewer** → si rejet, renvoie au dev concerné → notifie à chaque itération

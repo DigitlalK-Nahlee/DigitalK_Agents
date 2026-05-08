@@ -38,18 +38,20 @@
 
 ## Emplacement des tickets
 
-Lire `config.md` pour déterminer où créer et lire les tickets :
+> ⚠️ `.team/tickets/` contient uniquement `TEMPLATE.md` — c'est un modèle, pas une destination.  
+> **Ne jamais créer un ticket dans `.team/tickets/`**, sauf si `OBSIDIAN_VAULT_PATH` est vide.
+
+Lire `OBSIDIAN_VAULT_PATH` dans `.team/config.md` AVANT de créer le ticket :
 
 ### Avec vault Obsidian (`OBSIDIAN_VAULT_PATH` renseigné)
-- Les tickets sont créés dans `<OBSIDIAN_VAULT_PATH>/Tickets/`
-- Nommage : `Ticket-<ID>-<TitreEnPascalCase>.md`
-- Respecter impérativement les règles de `.team/OBSIDIAN_RULES.md` (wikilinks, max 20 lignes par note, template, log)
-- Le ticket principal peut dépasser 20 lignes car c'est un document de suivi — mais chaque décision technique doit avoir sa propre note atomique liée depuis le ticket
+- Créer le ticket dans `<OBSIDIAN_VAULT_PATH>/Tickets/<ID>-<TitreEnPascalCase>.md`
+- Utiliser `TEMPLATE.md` comme modèle uniquement — ne pas le modifier, ne pas le déplacer
+- Respecter les règles de `.team/OBSIDIAN_RULES.md` (wikilinks, max 20 lignes par note, log)
+- Le ticket principal peut dépasser 20 lignes — mais chaque décision technique = note atomique liée
 
 ### Sans vault Obsidian (`OBSIDIAN_VAULT_PATH` vide)
-- Les tickets sont créés dans `.team/tickets/`
-- Nommage : `<ID>-<titre-en-kebab-case>.md`
-- Utiliser le template `.team/tickets/TEMPLATE.md`
+- Créer le ticket dans `.team/tickets/<ID>-<titre-en-kebab-case>.md`
+- Utiliser `TEMPLATE.md` comme modèle uniquement — ne pas le modifier, ne pas le déplacer
 
 ## Décision : quels agents lancer
 
