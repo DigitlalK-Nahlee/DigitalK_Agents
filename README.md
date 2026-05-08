@@ -32,14 +32,22 @@ LANG=fr
 MAX_ITERATIONS=3
 ```
 
-### 3. Ouvrir Claude Code à la racine du projet
+### 3. Copier `CLAUDE.md` à la racine du projet
+
+```bash
+cp .team/../CLAUDE.md ./CLAUDE.md
+```
+
+> Ce fichier est lu automatiquement par Claude à chaque démarrage de session. Il lui explique son rôle d'orchestrateur, le pipeline, et comment spawner les agents. **Sans ce fichier, Claude ne connaît pas le système.**
+
+### 4. Ouvrir Claude Code à la racine du projet
 
 ```bash
 cd MonProjet
 claude
 ```
 
-L'orchestrateur (Claude) lit automatiquement `.team/` et est prêt à recevoir des demandes.
+Claude lit `CLAUDE.md` au démarrage et est immédiatement opérationnel comme orchestrateur.
 
 ---
 
