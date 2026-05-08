@@ -32,7 +32,15 @@ LANG=fr
 MAX_ITERATIONS=3
 ```
 
-### 3. Intégrer `CLAUDE.md` à la racine du projet
+### 3. Intégrer `.claude/` au projet
+
+Le dossier `.team/.claude/` contient la configuration Claude Code de l'équipe (permissions, hooks).  
+**Ne pas écraser le `.claude/` existant du projet.**  
+Fusionner manuellement les entrées pertinentes dans le `.claude/settings.json` du projet.
+
+> `settings.local.json` est exclu du repo (`.gitignore`) — il est propre à chaque machine.
+
+### 4. Intégrer `CLAUDE.md` à la racine du projet
 
 Claude lit automatiquement `CLAUDE.md` au démarrage — c'est ce qui lui explique son rôle d'orchestrateur. **Ne pas écraser un `CLAUDE.md` existant.**
 
